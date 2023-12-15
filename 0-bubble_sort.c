@@ -3,7 +3,7 @@
  *
  *
  */
-void bubble_sort(int *array, size_t size);
+void bubble_sort(int *array, size_t size)
 {
 	int i, j, temp;
 
