@@ -20,14 +20,17 @@ void insertion_sort_list(listint_t **list)
 		{
 			temp = new->prev;
 			new->prev = temp->prev;
-			temp->next = new->next;
 			if (temp->prev != NULL)
 				temp->prev->next = new;
-			*list = new;
+			else
+				*list = new;
+			temp->next = new->next;
+			if (new->next != NULL)
+				new->next->prev = temp;
 			new->next = temp;
 			temp->prev = new;
 			print_list(*list);
-			new = *list;
+			new = new->next;
 		}
 		else
 			new = new->next;
