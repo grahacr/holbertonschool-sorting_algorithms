@@ -30,7 +30,7 @@ void insertion_sort_list(listint_t **list)
 			new->next = temp;
 			temp->prev = new;
 			new = new->next;
-			print_list(list);
+			print_list(*list);
 		}
 		else
 			new = new->next;
