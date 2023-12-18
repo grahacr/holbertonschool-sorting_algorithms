@@ -10,7 +10,7 @@ void int_swap(int *first, int *second)
 
 	temp = *first;
 	*first = *second;
-	second = temp;
+	*second = temp;
 }
 /**
  * lomuto_part - implement lomuto partition
@@ -46,5 +46,5 @@ void quick_sort(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
 		return;
-	lomuto_part(array, size, 0, size - 1);
+	lomuto_part(array, 0, size - 1);
 }
