@@ -24,16 +24,16 @@ int lomuto_part(int array[], size_t size, int low, int high)
 {
 	int pivot = array[high];
 	int i = low - 1;
-	int j = low;
+	int j;
 
 	for (j = low; j <= high - 1; j++)
 	{
 		if (array[j] <= pivot)
 		{
-			i++;
 			int_swap(&array[i], &array[j]);
 			print_array(array, size);
 		}
+		i++;
 	}
 	int_swap(&array[i + 1], &array[high]);
 	return (i + 1);
