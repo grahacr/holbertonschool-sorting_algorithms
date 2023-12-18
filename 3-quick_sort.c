@@ -20,7 +20,7 @@ void int_swap(int *first, int *second)
  * Return: index where partition ended up
  *
  */
-int lomuto_part(int array[], int low, int high)
+int lomuto_part(int array[], size_t size, int low, int high)
 {
 	int pivot = array[high];
 	int i = low - 1;
@@ -32,6 +32,7 @@ int lomuto_part(int array[], int low, int high)
 		{
 			i++;
 			int_swap(&array[i], &array[j]);
+			print_array(array, size);
 		}
 	}
 	int_swap(&array[i + 1], &array[high]);
@@ -46,5 +47,5 @@ void quick_sort(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
 		return;
-	lomuto_part(array, 0, size - 1);
+	lomuto_part(array, size, 0, size - 1);
 }
