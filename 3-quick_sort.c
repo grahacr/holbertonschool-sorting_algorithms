@@ -31,10 +31,10 @@ int lomuto_part(int array[], size_t size, int low, int high)
 		if (array[j] < pivot)
 		{
 			int_swap(&array[i], &array[j]);
-			print_array(array, size);
 		}
 		i++;
 	}
+	print_array(array, size);
 	int_swap(&array[i + 1], &array[high]);
 	return (i + 1);
 }
