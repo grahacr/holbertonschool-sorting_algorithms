@@ -24,17 +24,17 @@ int lomuto_part(int array[], size_t size, int low, int high)
 {
 	int pivot = array[high];
 	int i = low - 1;
-	int j;
+	int j = 0;
 
 	for (j = low; j <= high - 1; j++)
 	{
 		if (array[j] < pivot)
 		{
+			i++;
 			int_swap(&array[i], &array[j]);
 		}
-		print_array(array, size);
-		i++;
 	}
+	print_array(array, size);
 	int_swap(&array[i + 1], &array[high]);
 	return (i + 1);
 }
@@ -45,7 +45,8 @@ int lomuto_part(int array[], size_t size, int low, int high)
  */
 void quick_sort(int *array, size_t size)
 {
-	if (array == NULL || size < 2)
-		return;
-	lomuto_part(array, size, 0, size - 1);
+	if (size > 0)
+	{
+		lomuto_part(array, size, 0, size - 1);
+	}
 }
