@@ -34,8 +34,8 @@ int lomuto_part(int array[], size_t size, int low, int high)
 		}
 		i++;
 	}
-	print_array(array, size);
 	int_swap(&array[i + 1], &array[high]);
+	print_array(array, size);
 	return (i + 1);
 }
 /**
