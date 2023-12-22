@@ -64,6 +64,6 @@ void quick_sort(int *array, size_t size)
 {
 	if (size > 0)
 	{
-		lomuto_part(array, size, 0, size - 1);
+		lomuto_part(array, 0, size - 1);
 	}
 }
