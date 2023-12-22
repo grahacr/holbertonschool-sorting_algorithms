@@ -13,9 +13,10 @@ void int_swap(int *first, int *second)
 	*second = temp;
 }
 /**
- *
- *
- *
+ * quick_sort_recursion - recursively quick sort array
+ * @array: array to sort
+ * @low: lowest point in array
+ * @high: highest point in array
  */
 void quick_sort_recursion(int *array, int low, int high)
 {
