@@ -24,6 +24,10 @@ void quick_sort_recursion(int *array, int low, int high)
 	if (low < high)
 	{
 		partindex = lomuto_part(array, low, high);
+		quick_sort_recursion(array, low, partindex - 1);
+		quick_sort_recursion(array, partindex + 1, high);
+	}
+}
 
 /**
  * lomuto_part - implement lomuto partition
@@ -33,7 +37,7 @@ void quick_sort_recursion(int *array, int low, int high)
  * Return: index where partition ended up
  *
  */
-int lomuto_part(int array[], size_t size, int low, int high)
+int lomuto_part(int array[], int low, int high)
 {
 	int pivot = array[high];
 	int i = low - 1;
@@ -47,8 +51,8 @@ int lomuto_part(int array[], size_t size, int low, int high)
 			int_swap(&array[i], &array[j]);
 		}
 	}
-	print_array(array, size);
 	int_swap(&array[i + 1], &array[high]);
+	print_array(array, high - low + 1);
 	return (i + 1);
 }
 /**
