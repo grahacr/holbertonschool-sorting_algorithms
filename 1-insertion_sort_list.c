@@ -10,13 +10,13 @@ void insertion_sort_list(listint_t **list)
 
 	if (*list == NULL || list == NULL)
 	{
-		return;
+		exit(EXIT_FAILURE);
 	}
 	new = *list;
 	new = new->next;
 	while (new)
 	{
-		if (new->n < (new->prev)->n)
+		while (new->prev && new->n < (new->prev)->n)
 		{
 			temp = new;
 			if (new->next)
