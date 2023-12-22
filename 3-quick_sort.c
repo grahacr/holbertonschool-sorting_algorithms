@@ -43,7 +43,7 @@ int lomuto_part(int array[], int low, int high)
 	int i = low - 1;
 	int j = 0;
 
-	for (j = low; j <= high - 1; j++)
+	for (j = low; j <= high; j++)
 	{
 		if (array[j] < pivot)
 		{
@@ -64,6 +64,6 @@ void quick_sort(int *array, size_t size)
 {
 	if (size > 0)
 	{
-		lomuto_part(array, 0, size - 1);
+		quick_sort_recursion(array, 0, size - 1);
 	}
 }
