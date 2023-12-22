@@ -38,7 +38,7 @@ void quick_sort_recursion(int *array, int low, int high)
  * Return: index where partition ended up
  *
  */
-int lomuto_part(int array[], int low, int high)
+int lomuto_part(int *array, int low, int high)
 {
 	int pivot = array[high];
 	int i = low - 1;
