@@ -18,21 +18,21 @@ void insertion_sort_list(listint_t **list)
 	{
 		if (new->n < (new->prev)->n)
 		{
-			temp = new->prev;
-			new->prev = temp->prev;
-			if (temp->prev != NULL)
-				temp->prev->next = new;
-			else
-				*list = new;
-			temp->next = new->next;
-			if (new->next != NULL)
-				new->next->prev = temp;
-			new->next = temp;
-			temp->prev = new;
-			new = new->next;
+			temp = new;
+			if (new->next)
+				(new->next)->prev = temp->prev;
+			(new->prev)->next = temp->next;
+			new = new->prev;
+			temp->prev = new->prev;
+			temp->next = new;
+			if (new->prev)
+				(new->prev)->next = temp;
+			new->prev = temp;
+			if (temp->prev == NULL)
+				*list = temp;
 			print_list(*list);
+			new = new->prev;
 		}
-		else
-			new = new->next;
+		new = new->next;
 	}
 }

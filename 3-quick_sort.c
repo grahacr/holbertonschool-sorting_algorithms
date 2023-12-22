@@ -13,6 +13,19 @@ void int_swap(int *first, int *second)
 	*second = temp;
 }
 /**
+ *
+ *
+ *
+ */
+void quick_sort_recursion(int *array, int low, int high)
+{
+	int partindex;
+
+	if (low < high)
+	{
+		partindex = lomuto_part(array, low, high);
+
+/**
  * lomuto_part - implement lomuto partition
  * @array: array to partition
  * @low: lowest integer in array
